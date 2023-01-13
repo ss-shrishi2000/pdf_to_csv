@@ -1,0 +1,151 @@
+?,"TDMA shares a single carrier frequency with several users, where each user makes use of"
+"",non-overlapping time slots. The number of time slots per frame depends on several
+"","factors, such as modulation technique, available bandwidth, etc."
+?,Data transmission for users of a TDMA system is not continuous but occurs in bursts.
+?,"Adaptive equalization is usually necessary in TDMA systems, since the transmission"
+"",rates are generally very high as compared to FDMA channels.
+?,"In TDMA, the guard time should be minimized. If the transmitted signal at the edges of a"
+"","time slot are suppressed sharply in order to shorten the guard time, the transmitted spec-"
+"",trum will expand and cause interference to adjacent channels.
+?,High synchronization overhead is required in TDMA systems because of burst transmis-
+"","sions. TDMA transmissions are slotted, and this requires the receivers to be synchronized"
+"","for each data burst. In addition, guard slots are necessary to separate users, and this"
+"",results in the TDMA systems having larger overheads as compared to FDMA.
+?,TDMA has an advantage in that it is possible to allocate different numbers of time slots
+?,Many users of a CDMA system share the same frequency. Either TDD or FDD may be
+"",used.
+?,"Unlike TDMA or FDMA, CDMA has a soft capacity limit. Increasing the number of"
+"","users in a CDMA system raises the noise floor in a linear manner. Thus, there is no"
+"","absolute limit on the number of users in CDMA. Rather, the system performance"
+"","gradually degrades for all users as the number of users is increased, and improves as the"
+"",number of users is decreased.
+?,Multipath fading may be substantially reduced because the signal is spread over a large
+Why OFDM
+OFDM is very effective for communication over channels with frequency selective fading (
+different frequency components of the signal experience different fading). It is very difficult to
+"handle frequency selective fading in the receiver , in which case, the design of the receiver is"
+hugely complex. Instead of trying to mitigate frequency selective fading as a whole (which
+occurs when a huge bandwidth is allocated for the data transmission over a frequency selective
+"fading channel), OFDM mitigates the problem by converting the entire frequency selective"
+fading channel into small flat fading channels (as seen by the individual subcarriers). Flat fading
+iseasiertocombat(comparedtofrequencyselectivefading)byemployingsimpleerror
+correction and equalization schemes.
+Difference between FDM and OFDM:
+"OFDM isa special case of FDM (Frequency DivisionMultiplexing).InFDM, thegiven"
+bandwidth is subdivided among a set of carriers. There is no relationship between the carrier
+"frequencies in FDM. For example, consider that the given bandwidth has to be divided among 5"
+"carriers(saya,b,c,d,e).Thereisnorelationshipbetweenthesubcarriers;a,b,c,dandecan"
+"anything within the given bandwidth.If the carriers are harmonics, say (b=2a,c=3a,d=4a,d=5a ,"
+integral multiple of fundamental component a ) then they become orthogonal. This is a special
+"case of FDM, which is called OFDM (as implied by the word – ‘orthogonal’ in OFDM)"
+Designing OFDM Transmitter:
+"Consider that we want to send the following data bits using OFDM : D = {d0,d1,d2,...)."
+The first thing that should be considered in designing the OFDM transmitter is the number of
+"subcarriers required to send the given data. As a generic case, lets assume that we have N"
+subcarriers.Eachsubcarriersarecenteredatfrequenciesthatareorthogonaltoeachother
+(usually multiples of frequencies).
+The second design parameter could be the modulation format that we wish to use. An
+OFDM signal can be constructed using anyone of the following digital modulation techniques
+"namely BPSK, QPSK, QAM etc.., .The data (D) has to be first converted from serial stream into"
+parallel stream depending on the number of sub-carriers (N). Since we assumed that there are N
+"subcarriers allowed for the OFDM transmission, we name the subcarriers from 0 to N-1. Now,"
+the Serial to Parallel converter takes the serial stream of input bits and outputs N parallel streams
+(indexed from 0 to N-1). These parallel streams are individually converted into the required
+"digital modulation format (BPSK, QPSK, QAM etc..,). Lets call this output S0,S1,..SN. The"
+conversion of parallel data (D) into the digitally modulated data (S) is usually achieved by a
+"constellationmapper,whichisessentiallyalookuptable(LUT).Oncethedatabitsare"
+"convertedtorequiredmodulationformat,theyneedtobesuperimposedontherequired"
+"","a software upgrade and the installation ofnew hardware called the packet control unit(PCU). The PCU directs the data traffic tothe GPRS network and can be a separatehardware element associated with the BSC."
+"",software upgrade and the installation of
+"",ew hardware called the packet control unit
+"",PCU). The PCU directs the data traffic to
+"",he GPRS network and can be a separate
+"",ardware element associated with the BSC.
+GPRS Support Nodes (GSNs),"ThedeploymentofGPRSrequirestheinstallation of new core network elementscalledtheservingGPRSsupportnode(SGSN) and gateway GPRS support node(GGSN)."
+"",nstallation of new core network elements
+"",alledtheservingGPRSsupportnode
+"",SGSN) and gateway GPRS support node
+"",GGSN).
+"Databases (HLR, VLR, etc.)","All the databases involved in the networkwill require software upgrades to handle thenew call models and functions introducedby GPRS."
+"Databases (HLR, VLR, etc.)",ll the databases involved in the network
+"",ill require software upgrades to handle the
+"",ew call models and functions introduced
+"",y GPRS.
+PRS Mobile Stations,
+"a software upgrade and the installation ofnew hardware called the packet control unit(PCU). The PCU directs the data traffic tothe GPRS network and can be a separatehardware element associated with the BSC."
+software upgrade and the installation of
+ew hardware called the packet control unit
+PCU). The PCU directs the data traffic to
+he GPRS network and can be a separate
+ardware element associated with the BSC.
+"ThedeploymentofGPRSrequirestheinstallation of new core network elementscalledtheservingGPRSsupportnode(SGSN) and gateway GPRS support node(GGSN)."
+nstallation of new core network elements
+alledtheservingGPRSsupportnode
+SGSN) and gateway GPRS support node
+GGSN).
+"Databases (HLR, VLR, etc.)"
+"Databases (HLR, VLR, etc.)"
+"All the databases involved in the networkwill require software upgrades to handle thenew call models and functions introducedby GPRS."
+ll the databases involved in the network
+ill require software upgrades to handle the
+ew call models and functions introduced
+y GPRS.
+ew Mobile Stations (MS) are required to use GPRS services because existing GSM phones do
+"ot handle the enhanced air interface or packet data. A variety of MS can exist, including a high-"
+"peed version of current phones to support high-speed data access, a new PDA device with an"
+"mbedded GSM phone, and PC cards for laptop computers. These mobile stations are backward"
+ompatible for making voice calls using GSM.
+PRS Base Station Subsyste
+ach BSC requires the installation of one or more Packet Control Units (PCUs) and a software
+pgrade. The PCU provides a physical and logical data interface to the Base Station Subsystem
+BSS) for packet data traffic. The BTS can also require a software upgrade but typically does not
+equire hardware enhancements.
+"hen either voice or data traffic is originated at the subscriber mobile, it is transported over the"
+"ir interface to the BTS, and from the BTS to the BSC in the same way as a standard GSM call."
+"owever, at the output of the BSC, the traffic is separated; voice is sent to the Mobile Switching"
+"enter (MSC) per standard GSM, and data is sent to a new device called the SGSN via the PCU"
+ver a Frame Relay interface.
+PRS Support Nodes
+"ollowing two new components, called Gateway GPRS Support Nodes (GSNs) and, Serving"
+PRS Support Node (SGSN) are added:
+?,"DECT provides a cordless communications framework for high traffic density, short range"
+"","telecommunications, and covers a broad range of applications and environments."
+?,DECT offers excellent quality and services for voice and data applications .
+?,The main function of DECT is to provide local mobility to portable users in an in-building
+"","Private Branch Exchange (PBX). The DECT standard supports telepoint services, as well."
+?,DECT is configured around an open standard (OSI) which makes it possible to interconnect
+"","wide area fixed or mobile networks, such as ISDN or GSM, to a portable subscriber"
+"",population.
+?,DECT provides low power radio access between portable parts and fixed base stations at
+"•Enhanced data for global evolution (EDGE) is a high-speed mobile data standard, it is"
+used to enable second-generation global system for mobile communication (GSM) and
+time division multiple access (TDMA) networks to transmit data at up to 384 kilobits per
+second (Kbps).
+"•EDGEprovidesspeedenhancementsbychangingthetypeofmodulationusedand"
+making a better use of the carrier currently used.
+"•It enables a greater data-transmission speed by implementing an eight-phase-shift keying"
+(8 PSK) modulation instead of Gaussian minimum-shift keying (GMSK).
+"•EDGE is a technology that gives GSM Networks the capacity to handle services for 3G."
+"•EDGE was developed to enable the transmission of large amounts of data at peak rates of"
+up to 472kbps.
+"•Users should experience average speeds of 80 kbps to 130 kbps."
+"•EDGE devices are backwards compatible with GPRS."
+"•Although EDGE reuses the GSM carrier bandwidth and time slot structure and air"
+"interface for efficiently providing high bit rates,"
+"•EDGE uses the same TDMA (Time Division Multiple Access) frame structure, logic"
+channel and 200 kHz carrier bandwidth as today's GSM networks.
+Features
+?It was standardized by 3GPP as a part of GSM family and was deployed in GSM networks in
+2003.
+?The other names for EDGE are Enhanced GPRS (EGPRS) and IMT-Single Carrier (IMT-
+SC).
+"?It is compatible with any packet – switched application. It is also backward – compatible, i.e."
+compatible with existing or older versions.
+?It enables data to be sent over a GSM TDMA systems at speeds of 384Kbps. GSM uses the
+modulation technique called Gaussian Minimum Shift Keying (GMSK). EDGE achieves
+increased bit rate by using 8PSK modulation scheme.
+"?In order to shift from GSM to GSM EDGE, additional network elements are incorporated to"
+enable IP based data transfer. The two main additional nodes required are ?
+oGateway GPRS Service Node (GGSN)
+oServing GPRS Service Node (SGSN)
+?GSM EDGE compatible mobile handsets are required to avail the service.
